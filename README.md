@@ -1,11 +1,16 @@
 <h1>An Ogre3D example code</h1>
 
-The main goal of this project is to render a graphic example using Ogre3D, a framework
+The main goal of this project is to render a graphic example using Ogre3D, a game engine [1] that uses the programming language C++ [2]. The example made here is a cube falling and bouncing at a generated universe, as illustrated in Figure 1.
+
+<nav style="width:100%;text-align:center;">
+	<img src="http://durvalpereira.com.br/ufal/ogre3d-example-img.png" style="width:90%;">
+	Figure 1
+</nav>
 
 This project was made to be graded at the course of Computer Graphics [1], lectured by
 <a href="https://github.com/oliveiramc" target="_blank">Professor Marcelo Oliveira</a> in the <a href="http://www.ic.ufal.br" target="_blank">Institute of Computing</a> at <a href="http://www.ufal.edu.br" target="_blank">UFAL - Federal University of Alagoas</a>.
 
-In the source files, you can find:<br>
+In the source files, you can find:
 
 <ul>
 	<li><i>cubeDemo.cpp</i>, source file of the code.</li>
@@ -17,8 +22,6 @@ In the source files, you can find:<br>
 OGRE (Object-Oriented Graphics Rendering Engine) is a scene-oriented, flexible 3D engine written in C++ designed to make it easier and more intuitive for developers to produce applications utilising hardware-accelerated 3D graphics. The class library abstracts all the details of using the underlying system libraries like Direct3D and OpenGL and provides an interface based on world objects and other intuitive classes.<br>
 
 To know more about <b>Ogre3D</b>, visit the official website: <a href="http://www.ogre3d.org/" target="_blank">Ogre3D.org</a>
-
-<h3>Links</h3>
 
 <h1>How to Install Ogre3D</h1>
 
