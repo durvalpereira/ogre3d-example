@@ -295,23 +295,42 @@ private:
     }
 
     void createBulletSim(void) {
-         ///collision configuration contains default setup for memory, collision setup. Advanced users can create their own configuration.
+         // EN:: collision configuration contains default setup for memory, collision setup.
+         // EN:: Advanced users can create their own configuration.
+
+         // BR:: configuração de colisão contem configurações padrão da memória.
+         // BR:: usuários avançados podem criar suas próprias configurações.
          collisionConfiguration = new btDefaultCollisionConfiguration();
 
-         ///use the default collision dispatcher. For parallel processing you can use a diffent dispatcher (see Extras/BulletMultiThreaded)
+         // EN:: use the default collision dispatcher. For parallel processing
+         // EN:: you can use a diffent dispatcher (see Extras/BulletMultiThreaded)
+
+         // BR:: use o dispatcher padrão. para processamento paralelo
+         // BR:: você pode usar um dispatcher diferente. (ver Doc)
          dispatcher = new   btCollisionDispatcher(collisionConfiguration);
 
-         ///btDbvtBroadphase is a good general purpose broadphase. You can also try out btAxis3Sweep.
+         // EN:: btDbvtBroadphase is a good general purpose broadphase.
+         // EN:: You can also try out btAxis3Sweep.
+
+         // BR:: btDbvtBroadphase é um bom broadphase de propósito geral.
+         // BR:: Você pode tentar também btAxis3Sweep.
          overlappingPairCache = new btDbvtBroadphase();
 
-         ///the default constraint solver. For parallel processing you can use a different solver (see Extras/BulletMultiThreaded)
+         // EN:: the default constraint solver. For parallel processing
+         // EN:: you can use a different solver (see Extras/BulletMultiThreaded)
+
+         // BR:: usa a constraint solver padrão. Para processamento paralelo
+         // BR:: você pode ver um solver diferente (ver Doc)
          solver = new btSequentialImpulseConstraintSolver;
 
          dynamicsWorld = new btDiscreteDynamicsWorld(dispatcher,overlappingPairCache,solver,collisionConfiguration);
          dynamicsWorld->setGravity(btVector3(0,-10,0));
 
-         ///create a few basic rigid bodies
-         // start with ground plane, 1500, 1500
+         // EN:: create a few basic rigid bodies
+         // EN:: start with ground plane, 1500, 1500
+
+         // BR:: cria alguns corpos rígidos básicos
+         // BR:: inicializa com um chão plano.
          btCollisionShape* groundShape = new btBoxShape(btVector3(btScalar(1500.),btScalar(1.),btScalar(1500.)));
 
          collisionShapes.push_back(groundShape);
@@ -323,38 +342,39 @@ private:
          {
             btScalar mass(0.);
 
-            //rigidbody is dynamic if and only if mass is non zero, otherwise static
+            // EN:: rigidbody is dynamic if and only if mass is non zero, otherwise static
+            // BR:: corpo rigido é dimâmico apenas se massa for diferente de 0.
             bool isDynamic = (mass != 0.f);
 
             btVector3 localInertia(0,0,0);
             if (isDynamic)
                groundShape->calculateLocalInertia(mass,localInertia);
 
-            // lathe - this plane isnt going to be moving so i dont care about setting the motion state
-            //using motionstate is recommended, it provides interpolation capabilities, and only synchronizes 'active' objects
             btDefaultMotionState* myMotionState = new btDefaultMotionState(groundTransform);
             btRigidBody::btRigidBodyConstructionInfo rbInfo(mass,myMotionState,groundShape,localInertia);
             btRigidBody* body = new btRigidBody(rbInfo);
 
-            //add the body to the dynamics world
+            // EN:: add the body to the dynamics world
+            // BR:: adiciona o corpo às dinâmicas do mundo
             dynamicsWorld->addRigidBody(body);
          }
 
 
          {
-            //create a dynamic rigidbody
-
+            // EN:: create a dynamic rigidbody
+            // BR:: cria um corpo rígido dinâmico
             btCollisionShape* colShape = new btBoxShape(btVector3(1,1,1));
-  //          btCollisionShape* colShape = new btSphereShape(btScalar(1.));
             collisionShapes.push_back(colShape);
 
-            /// Create Dynamic Objects
+            // EN:: Create Dynamic Objects
+            // BR:: Cria objetos dinâmicos
             btTransform startTransform;
             startTransform.setIdentity();
 
             btScalar   mass(1.f);
 
-            //rigidbody is dynamic if and only if mass is non zero, otherwise static
+            // EN:: rigidbody is dynamic if and only if mass is non zero, otherwise static
+            // BR:: corpo rigido é dimâmico apenas se massa for diferente de 0.
             bool isDynamic = (mass != 0.f);
 
             btVector3 localInertia(0,0,-1.0);
