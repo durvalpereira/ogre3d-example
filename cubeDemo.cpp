@@ -8,12 +8,17 @@
 using namespace Ogre;
 
 
-//function defs
+// EN:: function defs
+
+// BR:: define função
 ManualObject* createCubeMesh(Ogre::String name, Ogre::String matName);
 
 
-// this pattern updates the scenenode position when it changes within the bullet simulation
-// taken from BulletMotionState docs page24
+// EN:: this pattern updates the scenenode position when it changes within the bullet simulation
+// EN:: taken from BulletMotionState docs page24
+
+// BR:: esse padrão atualiza a posição do nó da cena quando muda de acordo com
+// BR:: a simulação bullet tirada do BulletMotionState (ver doc)
 class MyMotionState : public btMotionState {
 public:
     MyMotionState(const btTransform &initialpos, Ogre::SceneNode *node) {
@@ -32,8 +37,6 @@ public:
         btQuaternion rot = worldTrans.getRotation();
         mVisibleobj->setOrientation(rot.w(), rot.x(), rot.y(), rot.z());
         btVector3 pos = worldTrans.getOrigin();
-        // TODO **** XXX need to fix this up such that it renders properly since this doesnt know the scale of the node
-        // also the getCube function returns a cube that isnt centered on Z
         mVisibleobj->setPosition(pos.x(), pos.y()+5, pos.z()-5);
     }
 protected:
@@ -70,10 +73,14 @@ public:
         delete mRenderer;
         delete mRoot;
 
-        // cleanup bulletdyanmics
+        // EN:: cleanup bulletdyanmics
+        // BR:: limpa as dinamicas
 
-       //cleanup in the reverse order of creation/initialization
-       //remove the rigidbodies from the dynamics world and delete them
+       // EN:: cleanup in the reverse order of creation/initialization
+       // EN:: remove the rigidbodies from the dynamics world and delete them
+
+       // BR:: limpa a ordem reversa de criação/inicialização
+       // BR:: remove os corpos rigidos da dinamica e deleta eles
        for (i=dynamicsWorld->getNumCollisionObjects()-1; i>=0 ;i--)
        {
           btCollisionObject* obj = dynamicsWorld->getCollisionObjectArray()[i];
@@ -86,7 +93,8 @@ public:
           delete obj;
        }
 
-       //delete collision shapes
+       // EN:: delete collision shapes
+       // BR:: deleta collisionShapes
        for (int j=0;j<collisionShapes.size();j++)
        {
           btCollisionShape* shape = collisionShapes[j];
@@ -124,12 +132,13 @@ private:
       btAlignedObjectArray<btCollisionShape*> collisionShapes;
 
 
-      // frame listener
+      // framelistener
    bool frameStarted(const FrameEvent &evt)
     {
       mKeyboard->capture();
 
-        // update physics simulation
+        // EN:: update physics simulation
+        // BR:: atualiza simulação da física
       dynamicsWorld->stepSimulation(evt.timeSinceLastFrame,50);
         return mContinue;
     }
@@ -177,25 +186,12 @@ private:
     {
         if (!mRoot->restoreConfig() && !mRoot->showConfigDialog())
             throw Exception(52, "User canceled the config dialog!", "Application::setupRenderSystem()");
-
-        //// Do not add this to the application
-        //RenderSystem *rs = mRoot->getRenderSystemByName("Direct3D9 Rendering Subsystem");
-        //                                      // or use "OpenGL Rendering Subsystem"
-        //mRoot->setRenderSystem(rs);
-        //rs->setConfigOption("Full Screen", "No");
-        //rs->setConfigOption("Video Mode", "800 x 600 @ 32-bit colour");
+        
     }
 
     void createRenderWindow()
     {
         mRoot->initialise(true, "Tutorial Render Window");
-
-        //// Do not add this to the application
-        //mRoot->initialise(false);
-        //HWND hWnd = 0;  // Get the hWnd of the application!
-        //NameValuePairList misc;
-        //misc["externalWindowHandle"] = StringConverter::toString((int)hWnd);
-        //RenderWindow *win = mRoot->createRenderWindow("Main RenderWindow", 800, 600, false, &misc);
     }
 
     void initializeResourceGroups()
@@ -215,17 +211,19 @@ private:
         mSceneMgr->setAmbientLight(ColourValue(0.25, 0.25, 0.25));
         mSceneMgr->setShadowTechnique( SHADOWTYPE_STENCIL_ADDITIVE );
 
-        // make a cube to bounce around
+        // EN:: make a cube to bounce around
+        // BR:: cria um cubo pra quicar
       ManualObject *cmo = createCubeMesh("manual", "");
       cmo->convertToMesh("cube");
       ent = mSceneMgr->createEntity("Cube", "cube.mesh");
       ent->setCastShadows(true);
       boxNode = mSceneMgr->getRootSceneNode()->createChildSceneNode();
       boxNode->attachObject(ent);
-      boxNode->setScale(Vector3(0.1,0.1,0.1)); // for some reason converttomesh multiplied dimensions by 10
+      boxNode->setScale(Vector3(0.1,0.1,0.1));
 
 
-      // make a rock wall on the floor
+      // EN:: make a rock wall on the floor
+      // BR:: adiciona piso de pedra no chão
         Plane plane(Vector3::UNIT_Y, 0);
         MeshManager::getSingleton().createPlane("ground",
                ResourceGroupManager::DEFAULT_RESOURCE_GROUP_NAME, plane,
@@ -236,14 +234,16 @@ private:
       ent->setCastShadows(false);
 
 
-      // make a light to see stuff with
+      // EN:: make a light to see stuff with
+      // BR:: adiciona uma iluminação
         Light *light = mSceneMgr->createLight("Light1");
         light->setType(Light::LT_POINT);
         light->setPosition(Vector3(250, 150, 250));
         light->setDiffuseColour(ColourValue::White);
         light->setSpecularColour(ColourValue::White);
 
-        // Create the scene node
+        // EN:: Create the scene node
+        // BR:: cria o SceneNode (nó da cena)
         SceneNode *node = mSceneMgr->getRootSceneNode()->createChildSceneNode("CamNode1", Vector3(-200, 100, 200));
         node->yaw(Degree(-45));
         node->attachObject(cam);
@@ -282,8 +282,6 @@ private:
         // CEGUI setup
         mRenderer = new CEGUI::OgreCEGUIRenderer(win, Ogre::RENDER_QUEUE_OVERLAY, false, 3000, mgr);
         mSystem = new CEGUI::System(mRenderer);
-
-        // Other CEGUI setup here.
     }
 
     void createFrameListener()
@@ -409,9 +407,11 @@ int main(int argc, char **argv)
 
 
 
-// make a cube, no cube primiatives in ogre
-// yanked from betajaen
-//http://www.ogre3d.org/forums/viewtopic.php?p=301318&sid=ce193664e1d3d7c4af509e6f4e2718c6
+// EN:: make a cube, no cube primiatives in ogre
+// BR:: cria um cubo, não há primitivas de cubo no Ogre
+
+// source:
+// http://www.ogre3d.org/forums/viewtopic.php?p=301318&sid=ce193664e1d3d7c4af509e6f4e2718c6
 ManualObject* createCubeMesh(Ogre::String name, Ogre::String matName) {
 
    ManualObject* cube = new ManualObject(name);
