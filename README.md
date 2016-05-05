@@ -2,10 +2,10 @@
 
 The main goal of this project is to render a graphic example using Ogre3D, a game engine [1] that uses the programming language C++ [2]. The example made here is a cube falling and bouncing at a generated universe, as illustrated in Figure 1.
 
-<nav style="margin-left:25%;width:50%;text-align:center;">
+<div style="margin-left:25%;width:50%;text-align:center;">
 	<img src="http://durvalpereira.com.br/ufal/ogre3d-example-img.png">
-	<br>Figure 1
-</nav>
+	<br><i>Figure 1</i>
+</div>
 
 This project was made to be graded at the course of Computer Graphics [3], lectured by
 <a href="https://github.com/oliveiramc" target="_blank">Professor Marcelo Oliveira</a> in the <a href="http://www.ic.ufal.br" target="_blank">Institute of Computing</a> at <a href="http://www.ufal.edu.br" target="_blank">UFAL - Federal University of Alagoas</a>.
@@ -13,8 +13,8 @@ This project was made to be graded at the course of Computer Graphics [3], lectu
 In the source files, you can find:
 
 <ul>
-	<li><i>cubeDemo.cpp</i>, source file of the code.</li>
-	<li>Slide of a presentation presented at the course.</li>
+	<li><i>cubeDemo.cpp</i>, source file of the code;</li>
+	<li>Slide of a presentation presented at the course;</li>
 	<li><i>ogre3d-example-img.png</i>, a screenshot of the rendering, used as <b>Figure 1</b>, shown above.</li>
 </ul>
 
