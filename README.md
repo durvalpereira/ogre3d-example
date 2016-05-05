@@ -1,3 +1,5 @@
+<html>
+<body>
 <h1>An Ogre3D example code</h1>
 
 The main goal of this project is to render a graphic example using Ogre3D, a game engine [1] that uses the programming language C++ [2]. The example made here is a cube falling and bouncing at a generated universe, as illustrated in Figure 1.
@@ -47,3 +49,6 @@ Durval Pereira<br>
 GitHub<br><br>
 Erivaldo Filho<br>
 <a href="#" target="_blank">GitHub</a>
+
+</body>
+<html>
