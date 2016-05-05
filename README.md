@@ -11,9 +11,9 @@ In the source files, you can find:
 
 <ul>
 	<li><i>cubeDemo.cpp</i>, source file of the code;</li>
-	<li><i>ogre3d-presentation.pdf</i>, a slide of a presentation presented at the course;</li>
-	<li><i>ogre3d-example-video.avi</i>, a demo video of the rendered graphic;</li>
-	<li><i>ogre3d-example-img.png</i>, a screenshot of the rendering, used as <b>Figure 1</b>, shown above.</li>
+	<li><i>ogre3d-presentation.pdf</i>, slide of a presentation presented at the course;</li>
+	<li><i>ogre3d-example-video.avi</i>, demo video of the rendered graphic;</li>
+	<li><i>ogre3d-example-img.png</i>, screenshot of the rendering, used as <b>Figure 1</b>, shown above.</li>
 </ul>
 
 <h2>About Ogre3D</h2>
