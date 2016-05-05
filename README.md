@@ -2,7 +2,7 @@
 <body>
 <h1>An Ogre3D example code</h1>
 
-The main goal of this project is to render a graphic example using Ogre3D, a game engine [1] that uses the programming language C++ [2]. The example made here is a cube falling and bouncing at a generated universe, as illustrated in <a href="http://durvalpereira.com.br/ufal/ogre3d-example-img.png" target="_blank">Figure 1</a>.
+The main goal of this project is to render a graphic example using Ogre3D, a game engine [1] that uses the programming language C++ [2]. The example made here is a cube falling and bouncing at a generated universe, as illustrated in <a href="http://durvalpereira.com.br/ufal/ogre3d-example-img.png" target="_blank">Figure 1</a>. You can see the rendered graphic in a demo video provided here, or clicking in this <a href="https://youtu.be/k8HxlVMGhUU" target="_blank">YouTube Link</a>.
 
 This project was made to be graded at the course of Computer Graphics [3], lectured by
 <a href="https://github.com/oliveiramc" target="_blank">Professor Marcelo Oliveira</a> in the <a href="http://www.ic.ufal.br" target="_blank">Institute of Computing</a> at <a href="http://www.ufal.edu.br" target="_blank">UFAL - Federal University of Alagoas</a>.
@@ -12,6 +12,7 @@ In the source files, you can find:
 <ul>
 	<li><i>cubeDemo.cpp</i>, source file of the code;</li>
 	<li>Slide of a presentation presented at the course;</li>
+	<li><i>ogre3d-example-video.avi</i>, a demo video of the rendered graphic;</li>
 	<li><i>ogre3d-example-img.png</i>, a screenshot of the rendering, used as <b>Figure 1</b>, shown above.</li>
 </ul>
 
@@ -40,10 +41,10 @@ Below are the links that can lead you to tutorials that can help you set up your
 
 <h2>Credits</h2>
 
-Durval Pereira<br>
-GitHub<br><br>
+<a href="http://www.durvalpereira.com.br" target="_blank">Durval Pereira</a>. Contact me <a href="mailto:contato@durvalpereira.com.br">here</a>.<br>
+<a href="http://bit.ly/durvallattes" target="_blank">Lattes</a> <a href="http://www.linkedin.com/in/DurvalPereira" target="_blank">LinkedIn</a> <a href="http://twitter.com/durvalpcn" target="_blank">Twitter</a> <a href="http://www.facebook.com/durvalpereiracn" target="_blank">Facebook</a> <a href="http://plus.google.com/+DurvalPereiraCesar" target="_blank">Google+<br><br>
 Erivaldo Filho<br>
-<a href="#" target="_blank">GitHub</a>
+<a href="https://github.com/erivaldofilho2" target="_blank">GitHub</a>
 
 </body>
 <html>
