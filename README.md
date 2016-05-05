@@ -24,7 +24,7 @@ To know more about <b>Ogre3D</b>, visit the official website: <a href="http://ww
 
 <h2>How to Install Ogre3D</h2>
 
-Below are the links that can lead you to tutorials that can help you set up your environment to use Ogre3D. You can select the link according to your Operating System [4]. If you use:
+Below the links that can lead you to tutorials that can help you set up your environment to use Ogre3D. You can select the link according to your Operating System [4]. If you use:
 
 <ul>
 	<li>Windows, click <a href="http://www.ogre3d.org/tikiwiki/Installing+the+Ogre+SDK" target="_blank">here</a></li>
@@ -42,7 +42,7 @@ Below are the links that can lead you to tutorials that can help you set up your
 <h2>Credits</h2>
 
 <a href="http://www.durvalpereira.com.br" target="_blank">Durval Pereira</a>. Contact me <a href="mailto:contato@durvalpereira.com.br">here</a>.<br>
-<a href="http://bit.ly/durvallattes" target="_blank">Lattes</a> <a href="http://www.linkedin.com/in/DurvalPereira" target="_blank">LinkedIn</a> <a href="http://twitter.com/durvalpcn" target="_blank">Twitter</a> <a href="http://www.facebook.com/durvalpereiracn" target="_blank">Facebook</a> <a href="http://plus.google.com/+DurvalPereiraCesar" target="_blank">Google+<br><br>
+<a href="http://bit.ly/durvallattes" target="_blank">Lattes</a> <a href="http://www.linkedin.com/in/DurvalPereira" target="_blank">LinkedIn</a> <a href="http://twitter.com/durvalpcn" target="_blank">Twitter</a> <a href="http://www.facebook.com/durvalpereiracn" target="_blank">Facebook</a> <a href="http://plus.google.com/+DurvalPereiraCesar" target="_blank">Google+</a><br><br>
 Erivaldo Filho<br>
 <a href="https://github.com/erivaldofilho2" target="_blank">GitHub</a>
 
